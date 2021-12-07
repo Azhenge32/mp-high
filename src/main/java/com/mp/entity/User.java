@@ -1,10 +1,10 @@
 package com.mp.entity;
 
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.time.LocalDateTime;
 
@@ -15,7 +15,9 @@ public class User{
     private Integer age;
     private String email;
     private Long managerId;
+    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
+    @TableField(fill = FieldFill.UPDATE)
     private LocalDateTime updateTime;
     private Integer version;
 
