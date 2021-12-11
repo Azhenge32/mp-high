@@ -1,5 +1,6 @@
 package com.mp;
 
+import com.mp.configuration.MybatisPlusConfig;
 import com.mp.dao.UserMapper;
 import com.mp.entity.User;
 import org.junit.Test;
@@ -17,9 +18,15 @@ public class MyTest {
     private UserMapper userMapper;
     
     @Test
-    public void updateById() {
+    public void selectById() {
         User user = userMapper.selectById(1088248166370832385L);
         System.out.println(user);
     }
 
+    @Test
+    public void selectFromDynamicTableName() {
+        MybatisPlusConfig.myTableName.set("user_2021");
+        userMapper.selectList(null);
+        //System.out.println(user);
+    }
 }
