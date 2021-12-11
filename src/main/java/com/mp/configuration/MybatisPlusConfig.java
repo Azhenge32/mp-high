@@ -29,15 +29,18 @@ import java.util.Map;
 public class MybatisPlusConfig {
     public static ThreadLocal<String> myTableName = new ThreadLocal<>();
 
+    /*
     @Bean
     public ISqlInjector sqlInjector() {
         return new LogicSqlInjector();
     }
+     */
 
     @Bean
     public OptimisticLockerInterceptor optimisticLockerInterceptor() {
         return new OptimisticLockerInterceptor();
     }
+
 
     @Bean
     @Profile({"dev", "test"})

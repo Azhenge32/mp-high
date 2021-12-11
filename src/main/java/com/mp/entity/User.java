@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 public class User{
     private Long id;
     private String name;
+    @TableField(fill = FieldFill.UPDATE)
     private Integer age;
     private String email;
     private Long managerId;
